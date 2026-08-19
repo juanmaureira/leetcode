@@ -5,14 +5,9 @@
  */
 var intersection = function(nums1, nums2) {
     let setNums1 = new Set(nums1)
-    let setNums2 = new Set(nums2)
-
     let result = new Set()
 
-    for(const elementInOne of setNums1){
-        for(const elementInTwo of setNums2){
-            if(!result.has(elementInOne) && elementInOne === elementInTwo) result.add(elementInOne)
-        }
-    }
-    return Array.from(result)    
+    for(const num of nums2)  if(setNums1.has(num)) result.add(num)
+
+    return Array.from(result)  
 };
